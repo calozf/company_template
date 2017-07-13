@@ -134,7 +134,7 @@
       <h2>PORTFOLIO</h2>
       <h4>What we have created</h4>
       <div class="row text-center slideanim">
-        <div class="col-sm-4">
+         <div class="col-sm-4">
           <div class="thumbnail">
             <img src="images/paris.jpg" alt="Paris" width="400" height="300">
             <p><strong>Paris</strong></p>
@@ -214,7 +214,7 @@
             <div class="panel-footer">
               <h3>$29</h3>
               <h4>per month</h4>
-              <button class="btn btn-lg">Sign up</button>
+              <button class="btn btn-lg" data-toggle="modal" data-target="#myModal">Sign up</button>
             </div>
           </div>
         </div>
@@ -233,7 +233,7 @@
             <div class="panel-footer">
               <h3>$49</h3>
               <h4>per month</h4>
-              <button class="btn btn-lg">Sign up</button>
+              <button class="btn btn-lg" data-toggle="modal" data-target="#myModal">Sign up</button>
             </div>
           </div>
         </div>
@@ -252,12 +252,37 @@
             <div class="panel-footer">
               <h3>$69</h3>
               <h4>per month</h4>
-              <button class="btn btn-lg">Sign up</button>
+              <button class="btn btn-lg" data-toggle="modal" data-target="#myModal">Sign up</button>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </div><!-- /row -->
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4><span class="glyphicon glyphicon-lock"></span> Sign Up</h4>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                </div>
+                <button type="submit" class="btn btn-block">Sign Up<span class="glyphicon glyphicon-ok"></span></button>
+              </form>
+            </div><!-- /modal body -->
+          </div>
+        </div><!-- /modal dialog -->
+      </div><!-- /modal fade -->
+    </div><!-- /container-fluid -->
 
     <!-- Container (Contact Section) -->
     <div id="contact" class="container-fluid bg-grey">
@@ -278,10 +303,12 @@
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
               </div>
             </div><!-- /row -->
-            <textarea class="form-control" id="comments" name="comments" placeholder="Message" rows="5"></textarea><br>
+            <textarea class="form-control" id="comments" name="comments" placeholder="Message" rows="5"></textarea>
+            <p id="visible-comment"></p>
+            <br>
             <div class="row">
               <div class="col-sm-12 form-group">
-                <button class="btn btn-default pull-right" type="submit">Send</button>
+                <button class="btn btn-default pull-right" id="contact-button" type="submit">Send</button>
               </div>
             </div>
           </form>
@@ -290,24 +317,6 @@
 
     <!-- Container (Google Maps) -->
     <div id="map"></div>
-    <script>
-    var map;
-    function initMap() {
-      var myLatLng = {lat: 51.4977836, lng: -0.1522502};
-
-      map = new google.maps.Map(document.getElementById('map'), {
-      center: myLatLng,
-      zoom: 14,
-      scrollwheel: false
-      });
-      var marker = new google.maps.Marker ({
-        position: myLatLng,
-        map: map,
-        animation: google.maps.Animation.DROP
-      });
-    }
-
-    </script>
 
     <!-- Footer -->
     <footer class="container-fluid text-center">
@@ -319,34 +328,8 @@
 
 
     <!-- JavaScript -->
-    <script>
-    $(document).ready(function(){
-      // Add smooth scrolling to all links in navbar + footer link
-      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-        if (this.hash !== "") {
-          event.preventDefault();
-          var hash = this.hash;
-          $('html, body').animate({
-            scrollTop: $(hash).offset().top
-          }, 900, function(){
-            window.location.hash = hash;
-          });
-        } // End if
-      });
-
-      // Slideanim
-      $(window).scroll(function() {
-        $(".slideanim").each(function(){
-          var pos = $(this).offset().top;
-
-          var winTop = $(window).scrollTop();
-          if (pos < winTop + 600) {
-            $(this).addClass("slide");
-          }
-        });
-      });
-    })
-    </script>
+    <script src="js/works.js"></script>
+    <script src="js/scripts.js"></script>
 
     <!-- Google Maps API -->
     <script async defer

@@ -94,6 +94,7 @@ h4 {
   margin-bottom: 10px;
 }
 
+
 /* Carousel */
 .carousel-control.right, 
 .carousel-control.left {
@@ -164,12 +165,47 @@ h4 {
   margin: 15px 0;
   background-color: #6666ff;
   color: #fff;
+  border-radius: 0;
 }
 
 .panel-footer button:hover { 
   border: 1px solid #6666ff;
   background-color: #fff;
   color: #6666ff;
+}
+
+/* Modal */
+.modal-header,
+.close {
+  background-color: #333;
+  color: #fff !important;
+  text-align: center;
+  font-size: 30px;
+}
+
+.modal-body {
+  padding: 10px;
+}
+
+.modal-header h4 {
+  color: white;
+}
+
+.modal-header,
+.modal-body {
+  padding: 40px 50px;
+}
+
+.btn-block {
+  background-color: #6666ff;
+  color: #fff;
+  border-radius: 0;
+}
+
+.btn-block:hover {
+  background-color: #fff;
+  color: #6666ff;
+  border-color: #6666ff;
 }
 
 /* Google Maps */
